@@ -1,21 +1,22 @@
 import ContactItem from 'components/ContactItem';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { selectFilteredContacts } from 'redux/selectors';
+import { useSelector } from 'react-redux';
+import {
+  selectFilteredContacts,
+  selectFilteredContactsByNumber,
+} from 'redux/contacts/contactsSelectors';
 
 function ContactList() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   const contacts = useSelector(selectFilteredContacts);
+  const contactsByNumber = useSelector(selectFilteredContactsByNumber);
+
+  const uniqueContacts = [...contacts, ...contactsByNumber].filter(
+    (name, index, array) => array.indexOf(name) === index
+  );
+
   return (
     <ul>
-      {contacts.map(({ id, name, phonenumber }) => (
-        <ContactItem key={id} name={name} phonenumber={phonenumber} id={id} />
+      {uniqueContacts.map(({ id, name, number }) => (
+        <ContactItem key={id} name={name} number={number} id={id} />
       ))}
     </ul>
   );

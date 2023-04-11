@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
 
 export const EditFormStyled = styled(Form)`
@@ -13,13 +13,14 @@ export const EditFormLabel = styled.label`
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-family: 'Segoe UI';
+  font-size: 14px;
 `;
 export const EditInput = styled(Field)`
   width: 180px;
-  border: 1px solid red;
+  border: 1px solid #1664e2;
   border-radius: 4px;
-  outline: 1px solid red;
+  outline: 1px solid #1664e2;
 `;
 
 export const EditFormWrapper = styled.div`
@@ -33,10 +34,9 @@ export const CustomError = styled.div`
   top: 0;
   left: 100%;
   padding: 3px;
-  width: 130px;
+  width: 110px;
   border: 1px solid red;
   border-radius: 4px;
   color: red;
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 8px;
 `;
