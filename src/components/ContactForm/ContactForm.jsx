@@ -7,9 +7,8 @@ import { nanoid } from '@reduxjs/toolkit';
 import { Form } from 'components/ContactForm/ContactForm.styled';
 import { Button, TextField } from '@mui/material';
 
-const nameRegExp = "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$";
-const phoneRegExp =
-  '+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}';
+// const nameRegExp = "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$";
+// const phoneRegExp = '/^(s*)?(+)?([- _():=+]?d[- _():=+]?){3,14}(s*)?$/';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -45,10 +44,10 @@ export const ContactForm = () => {
         label="Name"
         variant="standard"
         required
-        inputProps={{
-          inputMode: 'text',
-          pattern: nameRegExp,
-        }}
+        // inputProps={{
+        //   inputMode: 'text',
+        //   pattern: nameRegExp,
+        // }}
         fullWidth
         sx={{
           mb: '1rem',
@@ -63,9 +62,10 @@ export const ContactForm = () => {
         label="Number"
         variant="standard"
         required
+        helperText="the phone number must contain between 10 and 13 digits"
         inputProps={{
-          inputMode: 'text',
-          pattern: phoneRegExp,
+          inputMode: 'numeric',
+          pattern: '[0-9]{10,13}',
         }}
         fullWidth
         sx={{

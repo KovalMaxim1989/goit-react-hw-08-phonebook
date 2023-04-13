@@ -12,6 +12,7 @@ import { Controls, ControlsSave } from 'components/Control/Controls';
 import EditForm from 'components/EditForm';
 import { editContact, deleteContact } from 'redux/contacts/contactsOperation';
 import { Box } from '@mui/material';
+import { cardNumberFormating } from 'utilities/cardNumberFormating';
 
 function ContactItem({ name, number, id }) {
   const [editName, setEditName] = useState(name);
@@ -59,7 +60,7 @@ function ContactItem({ name, number, id }) {
 
             <ContactTel>
               <ImPhone fill="#1976d2" />
-              {number}
+              {cardNumberFormating(number)}
             </ContactTel>
           </ContactInfo>
           <Controls

@@ -14,26 +14,19 @@ function HomePage() {
     >
       <Typography
         variant="h2"
-        component="h1"
-        style={{ color: '#1976d2', fontWeight: 600, paddingTop: '150px' }}
+        component="h2"
+        style={{ color: '#1976d2', paddingTop: '100px' }}
       >
-        Phonebook
-      </Typography>
-      <Typography
-        variant="h3"
-        component="p"
-        style={{ color: '#1976d2', paddingTop: '50px' }}
-      >
-        Welcome to manager you own contacts.
+        Welcome to the phone book
       </Typography>
       <Typography
         variant="h4"
         component="p"
-        style={{ color: '#1976d2', paddingTop: '50px' }}
+        style={{ color: '#1976d2', paddingTop: '100px' }}
       >
-        If you want to have more possibility to manage your contacts, <br />{' '}
-        please <LinkStyled to="/login">Log in</LinkStyled> to you cabinet or{' '}
-        <LinkStyled to="/register">Register</LinkStyled>
+        Please <LinkStyled to="/login">Log in</LinkStyled> to you cabinet or{' '}
+        <LinkStyled to="/register">Register</LinkStyled> to work with your
+        contacts
       </Typography>
     </Box>
   );

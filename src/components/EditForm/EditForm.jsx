@@ -12,9 +12,8 @@ import {
   EditFormWrapper,
 } from './EditForm.styled';
 
-const nameRegExp = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
-const phoneRegExp =
-  /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
+const nameRegExp = /^[a-zA-Zа-яА-Я0-9]{3,}$/;
+const phoneRegExp = /[0-9]{10,13}/;
 
 let userValidSchema = object({
   name: string().matches(nameRegExp, 'Name is not valid!').required(),
